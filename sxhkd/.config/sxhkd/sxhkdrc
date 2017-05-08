@@ -87,5 +87,9 @@ super + space
 	rofi -show run -lines 8 -eh 2 -width 800 -padding 200 -bw 0 -bc "#2f343f" -bg "#000000" -fg "#f3f4f5" -hlbg "#ffffff" -hlfg "#000000" -font "Ubuntu Mono 30"
 
 # make sxhkd reload its configuration files:
-super + Escape
+super + e
 	pkill -USR1 -x sxhkd
+
+super + Escape 
+	emacsclient -c
+
