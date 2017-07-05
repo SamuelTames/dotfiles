@@ -1,4 +1,4 @@
 #!/bin/sh
 for d in */ ; do
-    stow $d
+    stow "$d"
 done
