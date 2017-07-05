@@ -82,7 +82,8 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(dracula
+                         spacemacs-dark
                          white-sand
                          tango-2
                          molokai
@@ -98,7 +99,7 @@ before layers configuration."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Ubuntu Mono Regular"
+   dotspacemacs-default-font '("Ubuntu Mono"
                                :size 15
                                :weight normal
                                :width normal
@@ -181,13 +182,13 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-  (setq c-basic-offset 4)
+  ;;(setq c-basic-offset 4)
   (global-hl-line-mode -1)
   (global-linum-mode)
   (set-fill-column 80)
   (auto-fill-mode t)
   ;;(toggle-fill-column-indicator t) 
-
+  ;;(setq-default indent-tabs-mode t)
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   (eval-after-load 'smartparens
