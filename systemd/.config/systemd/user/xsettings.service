@@ -1,0 +1,12 @@
+[Unit]
+Description=Configure X settings
+PartOf=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/xset r rate 200 120
+ExecStart=/usr/bin/xset s off -dpms
+ExecStart=/usr/bin/wmname LG3D
+
+[Install]
+WantedBy=bspwm-session.target

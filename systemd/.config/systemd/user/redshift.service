@@ -1,0 +1,11 @@
+[Unit]
+Description=Redshift display colour temperature adjustment
+Documentation=http://jonls.dk/redshift/
+PartOf=graphical-target.service
+
+[Service]
+ExecStart=/usr/bin/redshift
+Restart=always
+
+[Install]
+WantedBy=bspwm-session.target

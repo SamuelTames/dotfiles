@@ -1,0 +1,11 @@
+[Unit]
+Description=xiccd
+Documentation=man:xiccd(1)
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/xiccd
+Restart=always
+
+[Install]
+WantedBy=bspwm-session.target

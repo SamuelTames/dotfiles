@@ -1,0 +1,10 @@
+[Unit]
+Description=autocutsel
+PartOf=graphical-session.target
+
+[Service]
+Type=forking
+ExecStart=autocutsel -fork
+
+[Install]
+WantedBy=bspwm-session.target

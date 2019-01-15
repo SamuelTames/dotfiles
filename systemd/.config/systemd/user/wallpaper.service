@@ -1,0 +1,10 @@
+[Unit]
+Description=Set Wallpaper
+PartOf=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hsetroot -solid "#7f7f7f"
+
+[Install]
+WantedBy=bspwm-session.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=urxvt daemon
+Documentation=man:urxvtd(1)
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/urxvtd -q -o
+Restart=always
+
+[Install]
+WantedBy=bspwm-session.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=XScreenSaver
+Documentation=man:xscreensaver(1)
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/xscreensaver -no-splash
+Restart=always
+
+[Install]
+WantedBy=bspwm-session.target

@@ -1,0 +1,14 @@
+.include need-session@.service
+
+[Unit]
+Description=Compton X11 compositor for session %I
+Documentation=man:compton(1)
+PartOf=graphical-session.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/compton -f -b
+Restart=always
+
+[Install]
+WantedBy=bspwm-session.target

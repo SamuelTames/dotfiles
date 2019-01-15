@@ -1,0 +1,12 @@
+#!/bin/bash
+
+dunst_play_sound() {
+    local -r appname="${1}"
+    local -r summary="${2}"
+    local -r body="${3}"
+    local -r icon="${4}"
+
+    echo "${appname}" | espeak -a 20 
+}
+
+dunst_play_sound "${@}"
