@@ -47,7 +47,6 @@ super + ctrl + {m,x,y,z}
 #
 # focus/swap
 #
-
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
@@ -69,19 +68,18 @@ super + {o,i}
 	bspc node {older,newer} -f; \
 	bspc wm -h on
 # focus or send to the given desktop
-super + {_,alt + }{1-9,0}
-		kind={desktop,monitor}; \
-		item="^{1-9,10}"; \
-		bspc query --"$kind"s --"$kind" "$\{item\}.focused" > /dev/null && item=last; \
-		bspc "$kind" -f "$item"
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
 # preselect
 #
-
-# preselect the direction
+# preselect the direction + toggle cancel
 super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+	dir={west,south,north,east}; \
+	cur=$(bspc query -T -n 'focused.!automatic' | jq -r '.presel.splitDir' 2>&-); \
+	[[ "${dir}" = "${cur}" ]] && dir=cancel; \
+	bspc node -p "${dir}"
 # preselect the ratio
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
@@ -95,7 +93,6 @@ super + ctrl + shift + space
 #
 # move/resize
 #
-
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
