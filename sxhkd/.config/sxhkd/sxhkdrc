@@ -11,7 +11,7 @@ super + Escape
 super + r 
 	pkill -USR1 -x sxhkd
 # program launcher
-super + @space
+super + space
 	rofi -show run -font "Ubuntu Mono 24" -eh 2 -lines 8 -bw 0 -width 900 -padding 200 -color-window "#000000, #c5c5c5, #000000" -color-normal "#000000, #ffffff, #000000, #353535, #ffffff" -color-active "#000000, #ffffff, #000000, #383838, #ffffff" -color-urgent "#ffffff, #dc322f, #ffffff, #dc322f, #ffffff" 
 
 
