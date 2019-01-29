@@ -4,7 +4,7 @@ PartOf=graphical-session.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/hsetroot -solid "#7f7f7f"
+ExecStart=/usr/bin/hsetroot -solid "#939393"
 
 [Install]
 WantedBy=bspwm-session.target

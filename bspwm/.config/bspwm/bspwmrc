@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Signal desktop hot n' ready to trigger services {sxhkd,compton,dunst,etc}
+systemctl --no-block --user import-environment
+systemctl --no-block --user start bspwm-session.target
+
+# 'virtual' desktop setup
 bspc monitor -d 1 2 3 4 5 6 7 8 9
 
 # Visual options
@@ -13,11 +18,7 @@ bspc config gapless_monocle     true
 bspc config focus_follows_pointer true
 
 # Rules
-bspc rule -a zathura state=tiled
-bspc rule -a keepassxc state=tiled
+#bspc rule -a zathura state=tiled
+#bspc rule -a keepassxc state=tiled
 bspc rule -a emacs state=tiled
 bspc rule -a feh floating=on manage=off
-
-# Signal desktop hot n' ready to trigger services {sxhkd,compton,dunst,etc}
-systemctl --user import-environment
-systemctl --no-block --user start bspwm-session.target
